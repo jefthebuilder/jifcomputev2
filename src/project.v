@@ -102,67 +102,56 @@ module tt_um_jefloverockets_cpuhandler (
                   9: begin
                    uo_out[0] <= ~rw;
                    uio_out <= 0;
+                   
 
                   end
                   10: begin
                     data1 <= uio_in;
-                    uo_out <= 0;
-                    uio_out <= 0;
                     //uio_out <= dataout[7:0];
                   end
                   11: begin
                     data2 <= uio_in;
-uo_out <= 0;
-                    uio_out <= 0;
+
                     //uio_out <= dataout[15:8];
                   
                   end
                   12: begin
                     data3 <= uio_in;
-uo_out <= 0;
-                    uio_out <= 0;
+
+                
                      //uio_out <= dataout[15:8];
                   
                   end
                   13: begin
                     data4 <= uio_in;
-                    uo_out <= 0;
-                                        uio_out <= 0;
+                 
                     //uio_out <= dataout[23:16];
 
                   end
                    
                   14: begin
                     data5 <= uio_in;
-                    uo_out <= 0;
-                    uio_out <= 0;
+               
                     //uio_out <= dataout[7:0];
                   end
                   15: begin
                     data6 <= uio_in;
-uo_out <= 0;
-                    uio_out <= 0;
+
                     //uio_out <= dataout[15:8];
                   
                   end
                   16: begin
                     data7 <= uio_in;
-uo_out <= 0;
-                    uio_out <= 0;
                      //uio_out <= dataout[15:8];
                   
                   end
                   17: begin
                     data8 <= uio_in;
-                    uo_out <= 0;
-                                        uio_out <= 0;
+                    
                     //uio_out <= dataout[23:16];
 
                   end
-                  default: begin
-                  uo_out <= 0;
-                  uio_out <= 0;
-                  end
+                  
 
                endcase
 
