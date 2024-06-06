@@ -1,6 +1,7 @@
 module ramcontroller (
   // ram connections
-  inout [7:0] ramdatain,
+  input [7:0] ramdatain,
+  output reg [7:0] ramdataout,
   output reg [1:0] bank,
   output reg [1:0] bankgroup,
   output reg active,
@@ -48,7 +49,17 @@ module ramcontroller (
           addressram[10] = 1;
           addressram[9:0] =  address[41:32];
         end
+        state <= 2;
+      end
+      2: begin
+        state <= 3;
+        pausedn <= 0;
+        if ( read)
+          begin
+            
+          end
         
+
       end
 
          
