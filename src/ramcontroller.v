@@ -22,7 +22,8 @@ module ramcontroller (
 );
   // kan zijn dat je refresh pin nodig hebt
   reg state;
-  assign ramclock = clock;
+  reg pausedn;
+  assign ramclock = clock & pausedn;
   always @(edge clock) begin
     case (state) begin
         0: begin
@@ -32,6 +33,7 @@ module ramcontroller (
           bankgroup <= address[61:60];
           addressram[17:0] <= address[59:42];
           state <= 1;
+          pausedn <= 1;
         end
       1: begin 
         if (read) begin
@@ -48,6 +50,7 @@ module ramcontroller (
         end
         
       end
+
          
     end
   end
