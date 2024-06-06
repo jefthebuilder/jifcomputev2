@@ -6,7 +6,7 @@ module ramcontroller (
   output reg [1:0] bankgroup,
   output reg active,
   output reg [17:0] addressram,
-  output clockenable,
+  output dataclock, // serial data clock
   output ramclock,
   output reg cs1,
   output reg refresh,
@@ -24,7 +24,9 @@ module ramcontroller (
   // kan zijn dat je refresh pin nodig hebt
   reg state;
   reg pausedn;
+  
   assign ramclock = clock & pausedn;
+  assign dataclock = clock & ~pausedn;
   always @(edge clock) begin
     case (state) begin
         0: begin
@@ -56,7 +58,7 @@ module ramcontroller (
         pausedn <= 0;
         if ( read)
           begin
-            
+            dataout[7:0] = ramdatain;
           end
         
 
