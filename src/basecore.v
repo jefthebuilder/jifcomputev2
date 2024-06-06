@@ -89,7 +89,7 @@ end
 
 endmodule
 
-module core(
+module basecore(
     input [63:0] data,
     output [63:0] datao,
     output [63:0] address,
