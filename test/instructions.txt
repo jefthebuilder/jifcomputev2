@@ -14,6 +14,12 @@
 001101: movf <flag1> <None> <flag3>
 001110: jmp (jumps at address stored in reg 8)
 001111: jmc <flag> (jumps at address stored in reg 8)
+010000: ret
+010001: addr <rega (offset)> (saves address for return function)
 structure:
 <value><nothing><h/l><regc/flag3><regb/flag2><rega/flag1><instruction>
 32bit    16bit      1bit  3bit           3bit     3bit       6bit
+memorymap (hex):
+0000-4000 bios
+4000-5000 L1 cache
+5000-6000 L2 shared cache
